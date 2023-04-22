@@ -1,11 +1,14 @@
 const fs = require("fs");
 const path = require("path");
 const mineflayer = require("mineflayer");
+const config = require('./config.json')
 
 const OPTIONS = {
-  username: "Duper",
-  host: "localhost",
-  port: 58093,
+  host: '${config.server}',
+  port: 25565,
+  username: `${config.email}`,
+  auth: 'microsoft',
+  version: '1.12.2'
 };
 
 function injectModules(bot) {
